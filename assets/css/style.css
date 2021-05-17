@@ -2,24 +2,27 @@
     box-sizing: border-box;
 }
 
-header {
+.highScores, .timer {
     background-color: white;
+    border-radius: 5px;
+    padding: 0.5%;
 }
 
 .highScores {
-    /* float: left; */
+    float: left;
     text-align: left;
     align-content: left;
 }
 
 .timer {
-    /* float: right; */
+    float: right;
     text-align: right;
     align-content: right;
 }
 
 body {
-    background-image: url("../images/js-background.jpg");
+    background: 
+    linear-gradient(rgb(46, 67, 94, 0.45), rgb(46, 67, 94, 0.45)), url("../images/js-background.jpg");
     background-size: cover;
 }
 
@@ -28,4 +31,5 @@ section {
     border-radius: 5px;
     margin: 1%;
     padding: 1%;
+    clear: both;
 }
