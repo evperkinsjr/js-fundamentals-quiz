@@ -2,28 +2,28 @@
     box-sizing: border-box;
 }
 
-.highScores, .timer {
+body {
+    background: 
+    linear-gradient(rgb(46, 67, 94, 0.45), rgb(46, 67, 94, 0.45)), url("../images/js-background.jpg");
+    background-size: cover;
+}
+
+#high-scores-link, #timer {
     background-color: white;
     border-radius: 5px;
     padding: 0.5%;
 }
 
-.highScores {
+#high-scores-link {
     float: left;
     text-align: left;
     align-content: left;
 }
 
-.timer {
+#timer {
     float: right;
     text-align: right;
     align-content: right;
-}
-
-body {
-    background: 
-    linear-gradient(rgb(46, 67, 94, 0.45), rgb(46, 67, 94, 0.45)), url("../images/js-background.jpg");
-    background-size: cover;
 }
 
 section {
