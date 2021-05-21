@@ -6,6 +6,7 @@ body {
     background: 
     linear-gradient(rgb(46, 67, 94, 0.45), rgb(46, 67, 94, 0.45)), url("../images/js-background.jpg");
     background-size: cover;
+    display: flex;
 }
 
 #high-scores-link, #timer {
