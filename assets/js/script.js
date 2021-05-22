@@ -19,7 +19,7 @@ var submitScore = document.getElementById("submit-initials");
 var highScoresCard = document.getElementById("high-scores-card");
 var pastScores = document.getElementById("past-scores");
 var playerInitials = document.getElementById("player-initials");
-var playerScore = document.getElementById("player-score");
+var playerScores = document.getElementById("player-score");
 var gameBtns = document.getElementById("game-btns");
 
 
@@ -142,16 +142,62 @@ function showScore() {
 }
 
 
-
-
-
-
 // user submits score, add score to high scores list
+submitScore.addEventListener("click", function highscore() {
+    if (userInitials.value === "") {
+        alert("Please add your initials.");
+        return false;
+    } else {
+        savedHighScores = JSON.parse(localStorage.getItem("savedHighScores")) || [];
+        var currentPlayer = userInitials.value.trim();
+        var currentHighScore = {
+            name: currentPlayer,
+            score: secondsLeft
+        };
+
+        userScoreCard.style.display = "none";
+        highScoresCard.style.display = "flex";
+        pastScores.style.display = "block";
+        gameBtns.style.display = "flex";
+
+        savedHighScores.push(currentHighScore);
+        localStorage.setItem("savedHighScores", JSON.stringify(savedHighScores));
+        generateHighScores();
+    }
+
+});
 
 // generate new high score list
+function generateHighScores() {
+    playerInitials.innerHTML = "";
+    playerScores.innerHTML = "";
+    var highscores = JSON.parse(localStorage.getItem("savedHighScores")) || [];
+    for (i = 0; i < highscores.length; i++) {
+        var newName = document.createElement("li");
+        var newScore = document.createElement("li");
+        newName.textContent = highscores[i].name;
+        newScore.textContent = highscores[i].score;
+        playerInitials.appendChild(newName);
+        playerScores.appendChild(newScore);
+    }
+}
 
 // display high scores
+function showHighScores() {
+    introCard.style.display = "none";
+    userScoreCard.style.display = "none";
+    highScoresCard.style.display = "flex";
+    pastScores.style.display = "block";
+    gameBtns.style.display = "flex";
+
+    generateHighScores();
+}
 
 // clear high scores list
+function clearScores() {
+    window.localStorage.clear();
+    playerInitials.textContent = "";
+    playerScores.textContent = "";
+}
 
 // start quiz
