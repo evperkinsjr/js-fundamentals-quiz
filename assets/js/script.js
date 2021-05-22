@@ -102,15 +102,23 @@ function startQuiz() {
         }
     }, 1000);
     quizCard.style.display = "block";
+    resultsEl.style.display = "none";
 }
 
 // check answers
+var rightAnswer = document.getElementById("right");
+var wrongAnswer = document.getElementById("wrong");
+
 function correctAnswer() {
-    var correctNotify = document.createElement("div");
-    correctNotify.setAttribute("class", "right-answer")
-    correctNotify.setAttribute("style", "color: green; font-weight: bold;");
-    correctNotify.textContent = "That's correct!";
-    quizCard.appendChild(correctNotify);
+    resultsEl.style.display = "block";
+    rightAnswer.style.display = "block";
+    wrongAnswer.style.display = "none";
+}
+
+function incorrectAnswer() {
+    resultsEl.style.display = "block";
+    rightAnswer.style.display = "none";
+    wrongAnswer.style.display = "block";
 }
 
 function checkAnswer(answer) {
@@ -119,11 +127,10 @@ function checkAnswer(answer) {
     if (answer === correct && currentQuestionIndex !== finalQuestionIndex) {
         score++;
         correctAnswer();
-        /* alert("That's correct!") */
         currentQuestionIndex++;
         generateQuiz();
     } else if (answer !== correct && currentQuestionIndex !== finalQuestionIndex) {
-        alert("That's wrong!");
+        incorrectAnswer();
         secondsLeft -= 10;
         currentQuestionIndex++;
         generateQuiz();
