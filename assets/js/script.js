@@ -63,12 +63,60 @@ var quizQuestions = [{
     correctAnswer: "c"}];
 
 // generate questions & answers
+var finalQuestionIndex = quizQuestions.length;
+var currentQuestionIndex = 0;
 
-// start timer, display first question
+
+function generateQuiz() {
+    userScoreCard.style.display = "none";
+    if (currentQuestionIndex === finalQuestionIndex) {
+        return showScore();
+    }
+    var currentQuestion = quizQuestions[currentQuestionIndex];
+    questionsEl.innerHTML = "<p>" + currentQuestion.question + "<p>";
+    buttonA.innerHTML = currentQuestion.choiceA;
+    buttonB.innerHTML = currentQuestion.choiceB;
+    buttonC.innerHTML = currentQuestion.choiceC;
+    buttonD.innerHTML = currentQuestion.choiceD;
+}
+
+// start quiz & timer, display first question
+var secondsLeft = 60;
+var timerInterval;
+var score = 0;
+var correct;
+
+function startQuiz() {
+    userScoreCard.style.display = "none";
+    introCard.style.display = "none";
+    highScoresCard.style.display = "none";
+    generateQuiz();
+
+    timerInterval = setInterval(function() {
+        secondsLeft--;
+        gameClock.textContent = "Seconds left: " + secondsLeft;
+    
+        if (secondsLeft === 0) {
+            clearInterval(timerInterval);
+            showScore();
+        }
+    }, 1000);
+    quizCard.style.display = "block";
+}
+
+// display results
+function showScore() {
+    quizCard.style.display = "none";
+    userScoreCard.style.display = "flex";
+    clearInterval(timerInterval);
+    userInitials.value = "";
+    userScore.innerHTML = "You answered " + score + "/" + quizQuestions.length + " questions correctly.";
+}
+
 
 // check answers
 
-// display results
+
 
 // user submits score, add score to high scores list
 
