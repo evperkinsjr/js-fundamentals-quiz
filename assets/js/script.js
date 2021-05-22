@@ -183,9 +183,10 @@ function generateHighScores() {
 }
 
 // display high scores
-function showHighScores() {
+function viewHighScores() {
     introCard.style.display = "none";
     userScoreCard.style.display = "none";
+    quizCard.style.display = "none";
     highScoresCard.style.display = "flex";
     pastScores.style.display = "block";
     gameBtns.style.display = "flex";
