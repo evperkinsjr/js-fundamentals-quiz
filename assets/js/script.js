@@ -25,7 +25,42 @@ var gameBtns = document.getElementById("game-btns");
 
 
 
-// quiz questions & answers
+// quiz questions & answers via https://www.w3schools.com/js/js_quiz.asp 
+var quizQuestions = [{
+    question: "Inside which element do we put the JavaScript?",
+    choiceA: "&lt;js&gt;",
+    choiceB: "&lt;script&gt;",
+    choiceC: "&lt;javascript&gt;",
+    choiceD: "&lt;scripting&gt;",
+    correctAnswer: "b"},
+    {
+    question: "How do you write an IF statement in JavaScript?",
+    choiceA: "if (i == 5)",
+    choiceB: "if i == 5 then",
+    choiceC: "if i = 5",
+    choiceD: "if i = 5 then",
+    correctAnswer: "a"},
+    {
+    question: "Which event occurs when the user clicks on an HTML element?",
+    choiceA: "onmouseclick",
+    choiceB: "onchange",
+    choiceC: "onmouseover",
+    choiceD: "onclick",
+    correctAnswer: "d"},
+    {
+    question: "Which operator is used to assign a variable?",
+    choiceA: "=",
+    choiceB: "*",
+    choiceC: "-",
+    choiceD: "x",
+    correctAnswer: "a"},
+    {
+    question: "How does a FOR loop start?",
+    choiceA: "for i = 1 to 5",
+    choiceB: "for (i = 0; i <= 5)",
+    choiceC: "for (i = 0; i <= 5; i++)",
+    choiceD: "for (i <= 5; i++)",
+    correctAnswer: "c"}];
 
 // generate questions & answers
 
