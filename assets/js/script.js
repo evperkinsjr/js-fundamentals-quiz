@@ -104,6 +104,34 @@ function startQuiz() {
     quizCard.style.display = "block";
 }
 
+// check answers
+function correctAnswer() {
+    var correctNotify = document.createElement("div");
+    correctNotify.setAttribute("class", "right-answer")
+    correctNotify.setAttribute("style", "color: green; font-weight: bold;");
+    correctNotify.textContent = "That's correct!";
+    quizCard.appendChild(correctNotify);
+}
+
+function checkAnswer(answer) {
+    correct = quizQuestions[currentQuestionIndex].correctAnswer;
+
+    if (answer === correct && currentQuestionIndex !== finalQuestionIndex) {
+        score++;
+        correctAnswer();
+        /* alert("That's correct!") */
+        currentQuestionIndex++;
+        generateQuiz();
+    } else if (answer !== correct && currentQuestionIndex !== finalQuestionIndex) {
+        alert("That's wrong!");
+        secondsLeft -= 10;
+        currentQuestionIndex++;
+        generateQuiz();
+    } else {
+        showScore();
+    }
+}
+
 // display results
 function showScore() {
     quizCard.style.display = "none";
@@ -114,7 +142,7 @@ function showScore() {
 }
 
 
-// check answers
+
 
 
 
