@@ -225,4 +225,5 @@ function replayQuiz() {
         }
     }, 1000);
     quizCard.style.display = "block";
+    resultsEl.style.display = "none";
 }
