@@ -201,4 +201,21 @@ function clearScores() {
     playerScores.textContent = "";
 }
 
-// start quiz
+// replay quiz
+function replayQuiz() {
+    userScoreCard.style.display = "none";
+    introCard.style.display = "none";
+    highScoresCard.style.display = "none";
+    generateQuiz();
+
+    timerInterval = setInterval(function() {
+        secondsLeft--;
+        gameClock.textContent = "Seconds left: " + secondsLeft;
+    
+        if (secondsLeft === 0) {
+            clearInterval(timerInterval);
+            showScore();
+        }
+    }, 1000);
+    quizCard.style.display = "block";
+}
