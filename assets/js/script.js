@@ -1,4 +1,5 @@
 // variables
+var seeHighScores = document.getElementById("high-scores-link")
 var gameClock = document.getElementById("timer");
 
 var introCard = document.getElementById("intro-card");
@@ -90,6 +91,7 @@ function startQuiz() {
     userScoreCard.style.display = "none";
     introCard.style.display = "none";
     highScoresCard.style.display = "none";
+    seeHighScores.style.visibility = "hidden";
     generateQuiz();
 
     timerInterval = setInterval(function() {
@@ -102,7 +104,6 @@ function startQuiz() {
         }
     }, 1000);
     quizCard.style.display = "block";
-    resultsEl.style.display = "none";
 }
 
 // check answers
@@ -210,20 +211,13 @@ function clearScores() {
 
 // replay quiz
 function replayQuiz() {
+    seeHighScores.style.visibility = "visible";
     userScoreCard.style.display = "none";
-    introCard.style.display = "none";
+    introCard.style.display = "flex";
     highScoresCard.style.display = "none";
-    generateQuiz();
-
-    timerInterval = setInterval(function() {
-        secondsLeft--;
-        gameClock.textContent = "Seconds left: " + secondsLeft;
-    
-        if (secondsLeft === 0) {
-            clearInterval(timerInterval);
-            showScore();
-        }
-    }, 1000);
-    quizCard.style.display = "block";
+    quizCard.style.display = "none";
     resultsEl.style.display = "none";
+    secondsLeft = 60;
+    score = 0;
+    currentQuestionIndex = 0;
 }
