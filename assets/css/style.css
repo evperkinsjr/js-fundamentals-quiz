@@ -148,13 +148,13 @@ button:hover {
 
 #player-initials {
     display: inline-block;
-    padding-left: 9.5rem;
+    padding-left: 5.7rem;
     font-weight: bold;
 }
 
 #player-score {
     float: right;
-    padding-right: 8.75rem;
+    padding-right: 4.5rem;
     font-weight: bold;
 }
 
