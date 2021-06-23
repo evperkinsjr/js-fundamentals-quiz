@@ -11,13 +11,27 @@ For this project, I created a short quiz to test the user's knowledge of JavaScr
 
 Link to live webpage: [JavaScript Fundamentals Quiz](https://evperkinsjr.github.io/js-fundamentals-quiz/)
 
+<p>&nbsp</p>
+
 ## Screenshot
 ![Quiz Screenshot](./assets/images/js-fundamentals-quiz-screenshot.png)
 
 > **Note**: This was project designed for desktop viewing. Some elements may not display properly at smaller resolutions.
+
+<p>&nbsp</p>
 
 ## Technologies Used
 
 - HTML
 - CSS
 - JavaScript
+
+<p>&nbsp</p>
+
+## Contact Information
+<enrico.perkins@gmail.com>
+
+<p>&nbsp</p>
+
+## License
+This project is licensed under the terms of the MIT license.
